@@ -1163,23 +1163,29 @@ body {
   }
 
   .step-wrapper {
+    /* Убираем любые фиксированные ширины и отступы */
     flex-direction: column;
-    text-align: left;
     gap: 10px;
-    max-width: 100%;
+    margin: 0 auto;
+    padding: 0; 
   }
-
   .step-image {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    height: auto;
+    margin: 0;
   }
-
   .step-content {
     max-width: 100%;
-    padding-left: 0;
+    padding-left: 0; /* убираем левый паддинг */
+    margin: 0 auto; /* чтобы текст не вытягивал ширину */
   }
 
+  .step-description {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    /* Можно добавить ещё: word-break: break-word; */
+  }
   .testimonial-banner {
     margin-top: 40px;
     padding: 20px;
@@ -1317,5 +1323,14 @@ body {
 
   .logo-image-end {
     width: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .subtitle {
+    margin-top: 35px;
+    max-width: 100%;
+    width: auto; /* убираем фиксированную ширину */
+    text-align: center; /* при необходимости центрируем текст */
   }
 }
