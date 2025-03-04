@@ -565,21 +565,21 @@ body {
 .image-gallery {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центрирует галерею по горизонтали */
-  justify-content: center; /* Центрирует галерею по вертикали (если нужно) */
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: center;
   width: 100%;
   max-width: 1186px;
-  margin: 0 auto; /* Центрируем по горизонтали */
+  margin: 0 auto; /* Центрирование */
   padding: 20px 0;
 }
 
-/* Строки изображений */
+/* Ряды изображений */
 .image-row {
   display: flex;
-  justify-content: center; /* Центрирует ряды изображений */
+  justify-content: center; /* Центрирование строк */
   align-items: center;
-  flex-wrap: wrap; /* Позволяет перенос картинок */
-  gap: 15px; /* Расстояние между изображениями */
+  flex-wrap: wrap; /* Чтобы картинки переносились */
+  gap: 15px;
   width: 100%;
 }
 
@@ -587,15 +587,25 @@ body {
 .image-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центрирует каждую пару */
+  align-items: center;
   justify-content: center;
   width: 310px;
+
+  /* Включаем анимацию */
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Центрирование всех картинок */
+/* Добавляем задержку для каждой картинки */
+.image-wrapper:nth-child(1) { animation-delay: 0.2s; }
+.image-wrapper:nth-child(2) { animation-delay: 0.4s; }
+.image-wrapper:nth-child(3) { animation-delay: 0.6s; }
+.image-wrapper:nth-child(4) { animation-delay: 0.8s; }
+.image-wrapper:nth-child(5) { animation-delay: 1s; }
+.image-wrapper:nth-child(6) { animation-delay: 1.2s; }
+
+/* Картинки */
 .gallery-image {
   display: block;
   width: 100%;
@@ -606,7 +616,7 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Анимация появления */
+/* Анимация появления (fade-in + поднятие) */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -618,6 +628,11 @@ body {
   }
 }
 
+/* Эффект увеличения при наведении */
+.gallery-image:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
 
 .bottom-line {
   min-height: 0;
