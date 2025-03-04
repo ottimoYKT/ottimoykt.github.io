@@ -565,63 +565,45 @@ body {
 .image-gallery {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 1186px;
-  max-width: 100%;
-  margin-top: 35px;
+  align-items: center; /* Центрирует галерею по горизонтали */
+  justify-content: center; /* Центрирует галерею по вертикали (если нужно) */
+  width: 100%;
+  max-width: 1186px;
+  margin: 0 auto; /* Центрируем по горизонтали */
+  padding: 20px 0;
 }
 
-/* Ряды изображений */
+/* Строки изображений */
 .image-row {
   display: flex;
-  width: 100%;
+  justify-content: center; /* Центрирует ряды изображений */
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Позволяет перенос картинок */
   gap: 15px; /* Расстояние между изображениями */
+  width: 100%;
 }
 
-/* Обертка для картинок */
+/* Обёртка для каждой пары картинок */
 .image-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Центрирует каждую пару */
+  justify-content: center;
   width: 310px;
-  opacity: 0; /* Прячем изначально */
-  transform: translateY(30px); /* Смещаем вниз */
+  opacity: 0;
+  transform: translateY(30px);
   animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Анимация появления с задержкой */
-.image-wrapper:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.image-wrapper:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.image-wrapper:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.image-wrapper:nth-child(4) {
-  animation-delay: 0.8s;
-}
-.image-wrapper:nth-child(5) {
-  animation-delay: 1s;
-}
-
-/* Картинки */
+/* Центрирование всех картинок */
 .gallery-image {
+  display: block;
   width: 100%;
+  max-width: 100%;
   aspect-ratio: 2;
   object-fit: contain;
   object-position: center;
   transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Эффект увеличения при наведении */
-.gallery-image:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
 }
 
 /* Анимация появления */
